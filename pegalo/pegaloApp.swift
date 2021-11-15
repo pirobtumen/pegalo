@@ -1,10 +1,3 @@
-//
-//  pegaloApp.swift
-//  pegalo
-//
-//  Created by Alberto Sola Comino on 14/11/21.
-//
-
 import SwiftUI
 
 @main

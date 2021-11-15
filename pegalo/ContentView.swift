@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  pegalo
-//
-//  Created by Alberto Sola Comino on 14/11/21.
-//
-
 import SwiftUI
 
 let timerInterval = 1.0
@@ -20,15 +13,30 @@ struct ContentView: View {
     @State var items = [ClipboardItem]()
     var body: some View {
         VStack {
-            List(items.reversed()){
-                ItemView(value: $0.value, cb: {v in
-                    clipboard.setString(v)
-                })
+            HStack {
+                Button(action: {
+                    items.removeAll()
+                }) {
+                    Text("Clear")
+                }
+            }
+            
+            List{
+                ForEach(items.indices.reversed(), id: \.self) { index in
+                    ClipItemView(value: items[index].value, cb: {v in
+                        clipboard.setString(v)
+                    })
+                        .listRowBackground(
+                            (index % 2 == 0) ? Color(.systemGray) : Color(.white)
+                        )
+                }
+                
             }
             .onReceive(timer, perform: { _ in
                 update()
             })
         }
+        .padding(10)
     }
     
     func update() -> Void {

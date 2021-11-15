@@ -6,6 +6,8 @@ struct ClipItemView: View {
     var body: some View {
         HStack {
             Text(value)
+                .truncationMode(.tail)
+                .frame(width: 300, height: 25)
             Button(action: {
                 cb(value)
             }) {

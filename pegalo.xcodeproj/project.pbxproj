@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D4D5CB4327418A34007ABC25 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CB4227418A34007ABC25 /* Clipboard.swift */; };
-		D4D5CB452741A39B007ABC25 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D5CB442741A39B007ABC25 /* Item.swift */; };
+		D4EB15362742DBF80027F1AE /* ClipItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EB15352742DBF80027F1AE /* ClipItemView.swift */; };
 		D4F589C927417A3300F1B028 /* pegaloApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F589C827417A3300F1B028 /* pegaloApp.swift */; };
 		D4F589CB27417A3300F1B028 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F589CA27417A3300F1B028 /* ContentView.swift */; };
 		D4F589CD27417A3400F1B028 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F589CC27417A3400F1B028 /* Assets.xcassets */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		D4D5CB4227418A34007ABC25 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
-		D4D5CB442741A39B007ABC25 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		D4EB15352742DBF80027F1AE /* ClipItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipItemView.swift; sourceTree = "<group>"; };
 		D4F589C527417A3300F1B028 /* pegalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pegalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F589C827417A3300F1B028 /* pegaloApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pegaloApp.swift; sourceTree = "<group>"; };
 		D4F589CA27417A3300F1B028 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				D4F589D127417A3400F1B028 /* pegalo.entitlements */,
 				D4F589CE27417A3400F1B028 /* Preview Content */,
 				D4D5CB4227418A34007ABC25 /* Clipboard.swift */,
-				D4D5CB442741A39B007ABC25 /* Item.swift */,
+				D4EB15352742DBF80027F1AE /* ClipItemView.swift */,
 			);
 			path = pegalo;
 			sourceTree = "<group>";
@@ -265,8 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4D5CB452741A39B007ABC25 /* Item.swift in Sources */,
 				D4D5CB4327418A34007ABC25 /* Clipboard.swift in Sources */,
+				D4EB15362742DBF80027F1AE /* ClipItemView.swift in Sources */,
 				D4F589CB27417A3300F1B028 /* ContentView.swift in Sources */,
 				D4F589C927417A3300F1B028 /* pegaloApp.swift in Sources */,
 			);
