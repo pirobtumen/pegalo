@@ -14,15 +14,13 @@ struct ClipboardItem: Identifiable {
     let id = UUID()
 }
 
-var lastItem = ""
-
 struct ContentView: View {
     let clipboard = Clipboard()
     let timer = Timer.publish(every: timerInterval, on: .main, in: .common).autoconnect()
     @State var items = [ClipboardItem]()
     var body: some View {
         VStack {
-            List(items){
+            List(items.reversed()){
                 ItemView(value: $0.value, cb: {v in
                     clipboard.setString(v)
                 })
@@ -35,9 +33,11 @@ struct ContentView: View {
     
     func update() -> Void {
         let value = clipboard.getString()
-        if (value != nil && value != lastItem)
+        if (value != nil && (items.first(where: {
+            clipItem in
+            return clipItem.value == value
+        }) == nil))
         {
-            lastItem = value!
             self.items.append(ClipboardItem(value: value!))
             
         }
