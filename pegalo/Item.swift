@@ -9,10 +9,13 @@ import SwiftUI
 
 struct ItemView: View {
     let value: String
+    let cb: (_ value: String) -> Void
     var body: some View {
         HStack {
             Text(value)
-            Button(action: {}) {
+            Button(action: {
+                cb(value)
+            }) {
                 Text("Copy")
             }
         }

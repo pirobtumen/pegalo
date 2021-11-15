@@ -14,4 +14,10 @@ struct Clipboard {
     func getString() -> String? {
         return pasteboard.string(forType: .string)
     }
+    
+    func setString(_ value: String) -> Void {
+        pasteboard.clearContents()
+        let _ = pasteboard.setString(value, forType: NSPasteboard.PasteboardType.string)
+        // TODO Check result is true
+    }
 }

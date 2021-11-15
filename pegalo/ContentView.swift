@@ -23,7 +23,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             List(items){
-                ItemView(value: $0.value)
+                ItemView(value: $0.value, cb: {v in
+                    clipboard.setString(v)
+                })
             }
             .onReceive(timer, perform: { _ in
                 update()
