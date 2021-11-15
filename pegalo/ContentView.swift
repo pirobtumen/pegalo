@@ -14,6 +14,8 @@ struct ClipboardItem: Identifiable {
     let id = UUID()
 }
 
+var lastItem = ""
+
 struct ContentView: View {
     let clipboard = Clipboard()
     let timer = Timer.publish(every: timerInterval, on: .main, in: .common).autoconnect()
@@ -27,19 +29,15 @@ struct ContentView: View {
                 update()
             })
         }
-        .padding(50)
     }
     
     func update() -> Void {
         let value = clipboard.getString()
-        if (value != nil)
+        if (value != nil && value != lastItem)
         {
-            if (self.items.count==0)
-            {
-                self.items.append(ClipboardItem(value: value!))
-            } else if (self.items[self.items.count-1].value != value) {
-                self.items.append(ClipboardItem(value: value!))
-            }
+            lastItem = value!
+            self.items.append(ClipboardItem(value: value!))
+            
         }
     }
 }
