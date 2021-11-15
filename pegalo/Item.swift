@@ -10,6 +10,11 @@ import SwiftUI
 struct ItemView: View {
     let value: String
     var body: some View {
-        Text(value)
+        HStack {
+            Text(value)
+            Button(action: {}) {
+                Text("Copy")
+            }
+        }
     }
 }

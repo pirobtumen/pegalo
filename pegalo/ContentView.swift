@@ -9,24 +9,37 @@ import SwiftUI
 
 let timerInterval = 1.0
 
+struct ClipboardItem: Identifiable {
+    let value: String
+    let id = UUID()
+}
+
 struct ContentView: View {
     let clipboard = Clipboard()
     let timer = Timer.publish(every: timerInterval, on: .main, in: .common).autoconnect()
-    @State var message = "Empty clipboard"
+    @State var items = [ClipboardItem]()
     var body: some View {
         VStack {
-            ItemView(value: message)
-                .onReceive(timer, perform: { _ in
-                    update()
-                })
+            List(items){
+                ItemView(value: $0.value)
+            }
+            .onReceive(timer, perform: { _ in
+                update()
+            })
         }
         .padding(50)
     }
     
     func update() -> Void {
         let value = clipboard.getString()
-        if (value != nil) {
-            self.message = value!
+        if (value != nil)
+        {
+            if (self.items.count==0)
+            {
+                self.items.append(ClipboardItem(value: value!))
+            } else if (self.items[self.items.count-1].value != value) {
+                self.items.append(ClipboardItem(value: value!))
+            }
         }
     }
 }
