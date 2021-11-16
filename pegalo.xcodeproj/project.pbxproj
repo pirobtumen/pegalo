@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D42C183A2744409A00128FE1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D4D5CB4227418A34007ABC25 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
 		D4EB15352742DBF80027F1AE /* ClipItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipItemView.swift; sourceTree = "<group>"; };
 		D4F589C527417A3300F1B028 /* pegalo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pegalo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +80,7 @@
 		D4F589BC27417A3300F1B028 = {
 			isa = PBXGroup;
 			children = (
+				D42C183A2744409A00128FE1 /* README.md */,
 				D4F589C727417A3300F1B028 /* pegalo */,
 				D4F589D927417A3400F1B028 /* pegaloTests */,
 				D4F589E327417A3400F1B028 /* pegaloUITests */,
