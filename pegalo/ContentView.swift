@@ -16,6 +16,7 @@ struct ContentView: View {
             HStack {
                 Button(action: {
                     items.removeAll()
+                    clipboard.clear()
                 }) {
                     Text("Clear")
                 }
@@ -41,7 +42,7 @@ struct ContentView: View {
     
     func update() -> Void {
         let value = clipboard.getString()
-        if (value != nil && (items.first(where: {
+        if (value != nil && value != "" && (items.first(where: {
             clipItem in
             return clipItem.value == value
         }) == nil))
