@@ -24,9 +24,7 @@ struct ContentView: View {
             
             List{
                 ForEach(items.indices.reversed(), id: \.self) { index in
-                    ClipItemView(value: items[index].value, cb: {v in
-                        clipboard.setString(v)
-                    })
+                    ClipItemView(value: items[index].value, onCopy: onCopy, onDelete: onDelete)
                         .listRowBackground(
                             (index % 2 == 0) ? Color(.systemGray) : Color(.white)
                         )
@@ -38,6 +36,21 @@ struct ContentView: View {
             })
         }
         .padding(10)
+    }
+    
+    func onCopy(_ value: String) {
+        clipboard.setString(value)
+    }
+    
+    func onDelete(_ value: String) {
+        let index = items.firstIndex(where: {i in i.value == value })
+        if (index != nil) {
+            items.remove(at: index!)
+        }
+        
+        if (items.count == 0) {
+            clipboard.clear()
+        }
     }
     
     func update() -> Void {
